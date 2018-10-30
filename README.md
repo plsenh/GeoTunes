@@ -1,12 +1,12 @@
 # Project-1
 
+[Live Site] (https://plsenh.github.io/Project-1/)
+
 ### Team
     * Pauline (team lead)
     * Dirk
     * Joel
     * Evan
-
-[Live Site] (https://plsenh.github.io/Project-1/)
 
 ### Project Goal:
 
