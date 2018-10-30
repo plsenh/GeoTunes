@@ -45,7 +45,6 @@
 ### API Suggestions
 
     Stick to APIs that do all of the following:
-
     * Allows CORS
     * Simple or no authentication
     * JSON response returned
