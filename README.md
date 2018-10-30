@@ -1,18 +1,17 @@
 # Project-1
 
+[Live Site] (https://plsenh.github.io/Project-1/)
+
 ### Team
     * Pauline (team lead)
     * Dirk
     * Joel
     * Evan
 
-[Live Site] (https://plsenh.github.io/Project-1/)
-
 ### Project Goal:
 
     * Build Something Awesome
 
- 
 ### Requirements:
 
     * Must uses at least two APIs
@@ -26,6 +25,16 @@
     * Must be Deployed (GitHub Pages or Firebase)
     * Must have User Input Validation
 
+### Presentation Requirement
+    * 10 minute formal presentation
+    * Explain in detail:
+        * Our overall application's concept
+        * Our Design process
+        * The motivation for its development
+        * The technologies we used (and briefly how they work)
+        * A demonstration of its functionality
+        * Directions for future development
+
 ### Grading Metrics
     * Concept
     * Design
@@ -36,8 +45,7 @@
 ### API Suggestions
 
     Stick to APIs that do all of the following:
-
-    * Allows CORS
-    * Simple or no authentication
-    * JSON response returned
-    * Well documented
+        * Allows CORS
+        * Simple or no authentication
+        * JSON response returned
+        * Well documented
