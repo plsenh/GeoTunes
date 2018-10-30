@@ -12,7 +12,6 @@
 
     * Build Something Awesome
 
- 
 ### Requirements:
 
     * Must uses at least two APIs
@@ -25,6 +24,16 @@
     * Must use Bootstrap or Alternative CSS Framework
     * Must be Deployed (GitHub Pages or Firebase)
     * Must have User Input Validation
+
+### Presentation Requirement
+    * 10 minute formal presentation
+    * Explain in detail:
+        * Our overall application's concept
+        * Our Design process
+        * The motivation for its development
+        * The technologies we used (and briefly how they work)
+        * A demonstration of its functionality
+        * Directions for future development
 
 ### Grading Metrics
     * Concept
