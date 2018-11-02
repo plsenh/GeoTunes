@@ -24,7 +24,7 @@ $(document).ready(function () {
                     //dynamically create key value pairs using square bracket notation and the index 
                     //}
                 // push your new obj to trackArray
-
+                let newObject = {};
             }
 
         })
