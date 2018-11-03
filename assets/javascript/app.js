@@ -5,7 +5,7 @@ $(document).ready(function () {
     var currentSong;
     var lyrics;
 
-    // function to show lyrics based on currentArtist and currentSong
+    // function to get lyrics based on currentArtist and currentSong
     function getLyrics(artist, song) {
 
         var queryURL = "https://api.lyrics.ovh/v1/" + artist + "/" + song;
@@ -23,6 +23,7 @@ $(document).ready(function () {
                 lyrics = response.lyrics.replace(/\n/g, "<br>")
 
                 // adding lyrics to the lyrics div
+                $("#lyrics").empty();
                 $("#lyrics").append(lyrics);
                 $("#lyrics").prepend("Artist: " + currentArtist + " | Song: " + currentSong + "<br>");
 
@@ -35,6 +36,15 @@ $(document).ready(function () {
 
         // show lyrics for current song
         // getLyrics(currentArtist, currentSong);
+
+        // function to show lyrics when "Show Lyrics is clicked"
+        $("#show-lyrics").on("click", function (event) {
+            event.preventDefault();
+            // currentArtist = ;
+            // currentSong = ;
+            getLyrics(currentArtist, currentSong);
+        });
+
     //  --------------------------
 
     // last-fm API
@@ -49,11 +59,16 @@ $(document).ready(function () {
             method: "GET",
         }).then(function (tracks) {
             const tracksResult = tracks.tracks;
+
+            // initial array to hold tracks
             const trackArray = [];
+
+            // empty old song list
+            $("#song-link").empty();
+            $("#song-link").html("<h1>Song List</h1>");
+
             for (let i = 0; i < tracksResult.track.length; i++) {
-                (tracksResult.track[i].artist.name);
-
-
+                
                 console.log(tracksResult.track[i].artist.name);
                 console.log(tracksResult.track[i].name);
                 console.log(tracksResult.track[i].url);
@@ -75,8 +90,19 @@ $(document).ready(function () {
                 };
                 trackArray.push(newObject);
                 console.log(newObject);
+                
+                // get next track
                 newObject.topTrack();
-                $("#list").append("<a href=" + newObject.url + " target='_blank'>" + newObject.topTrack() + "</a> ");
+
+                // push new object to trackArray
+                
+                
+
+
+                // $("#list").append("<a href=" + newObject.url + " target='_blank'>" + newObject.topTrack() + "</a>");
+                $("#song-link").append("<tr><td>" + newObject.topTrack() +"</td>");
+                $("#song-link").append("<td> <a href=" + newObject.url + " target='_blank'>Play Song</a> </td>");
+                $("#song-link").append("<td> <span id='show-lyrics'><a href='#'>Show Lyrics</a></span> </td></tr>");
             }
             console.log(trackArray);
         })
