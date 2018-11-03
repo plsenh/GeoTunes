@@ -12,12 +12,21 @@ body,
     /* IE6-9 */
 }
 
+#header {
+    font-family: 'Patua One', cursive;
+    color: darkred;
+    font-size: 95px;
+    text-align: center;
+    text-shadow: 2px 2px 6px #473939;
+
+}
+
 #playlist-button {
     background: darkblue;
     width: 200px;
     height: 45px;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 25px;
     border-radius: 20px;
 
@@ -28,12 +37,17 @@ body,
     width: 350px;
 }
 
+#lyrics-header {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
 #lyrics {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
 }
 
 #song-link {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 22px;
     text-align: center;
     color: darkblue;
