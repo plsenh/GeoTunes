@@ -25,7 +25,7 @@ $(document).ready(function () {
 
                 // adding lyrics to the lyrics div
                 $("#lyrics").empty();
-                $("#lyrics").append("<h1>Lyrics</h1>");
+                $("#lyrics").append("<h1 id='lyrics-header'>Lyrics</h1>");
                 $("#lyrics").append("<h3>Artist: " + currentArtist + " | Song: " + currentSong + "</h3>");
                 $("#lyrics").append(lyrics);
             });
@@ -34,8 +34,6 @@ $(document).ready(function () {
     // test to show lyrics for Sia's song, titled "Chandelier"
     // currentArtist = "Sia";
     // currentSong = "Chandelier";
-
-    // show lyrics for current song
     // getLyrics(currentArtist, currentSong);
 
     // function to show lyrics when "Show Lyrics is clicked"
@@ -62,9 +60,9 @@ $(document).ready(function () {
             // empty old song list, and remake header
             $("#list").empty();
 
-            if (location != "") {
+            // if (location != "") {
                 // clear error text, if any
-                $("#empty-error").empty();
+                // $("#empty-error").empty();
 
                 const tracksResult = tracks.tracks;
 
@@ -121,11 +119,11 @@ $(document).ready(function () {
                     // append songListDiv to the song-link div
                     $("#list").append(songListDiv);
                 }
-            }
+            // }
 
-            else {
-                $("#empty-error").html("Please enter a city.");
-            }
+            // else {
+            //     $("#empty-error").html("Please enter a city.");
+            // }
 
             // test to console each object in trackArray
             // for (let i = 0; i < trackArray.length; i++) {
