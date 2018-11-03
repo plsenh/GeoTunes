@@ -1,13 +1,29 @@
 #wrapper {
     width: 1200px;
-    margin: 0 auto;
+    margin: 25px auto;
+}
+
+#left-column {
+    width: 500px;
+    float: left;
+
+}
+
+#right-column {
+    width: 500px;
+    float: left;
+
+}
+
+#input-container {
+    margin: 5px;
 }
 
 
 #album-art {
     border: 10px;
     background-color: black;
-    width: 400px;
+    width: 450px;
     height: 450px;
 }
 
