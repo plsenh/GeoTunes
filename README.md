@@ -1,20 +1,22 @@
 # GeoTunes
 
-[Live Site] (https://plsenh.github.io/Project-1/)
+[Deployed Site] (https://plsenh.github.io/Project-1/)
 
 ### Team
+
     * Pauline (team lead)
     * Dirk
     * Joel
     * Evan
 
-### Project Goal:
+### Project Details:
 
-    * GeoTunes allows users to enter a location to produce a 
+    * GeoTunes allows users to choose a country and city to generate a list of the top tracks in that location.
+    * Users can click on a link that directs them to listen to the song or to display the lyrics on the page.
 
 ### Requirements:
 
-    * Must uses at least two APIs
+    * Must use at least two APIs
     * Must use AJAX to pull data
     * Must utilize at least one new library or technology that we haven't discussed
     * Must have a polished frontend / UI
@@ -26,6 +28,7 @@
     * Must have User Input Validation
 
 ### Presentation Requirement
+
     * 10 minute formal presentation
     * Explain in detail:
         * Our overall application's concept
@@ -36,6 +39,7 @@
         * Directions for future development
 
 ### Grading Metrics
+
     * Concept
     * Design
     * Functionality
