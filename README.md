@@ -12,9 +12,13 @@
 ### Project Details:
 
 GeoTunes allows users to choose a country and city to generate a list of the top tracks in that location.
+
 Users can click on a link that directs them to listen to the song or to display the lyrics on the page.
+
 API's used:
+
         [last-fm] (https://www.last.fm/api)
+
         [lyrics.ovh] (https://lyricsovh.docs.apiary.io/)
 
 ### Requirements:
