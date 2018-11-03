@@ -17,10 +17,10 @@ $(document).ready(function () {
             })
             // After data comes back from the request
             .then(function (response) {
-                console.log(queryURL);
-                console.log(response);
+                // console.log(queryURL);
+                // console.log(response.lyrics);
 
-                lyrics = response.lyrics.replace(/\n/g, "<br>")
+                lyrics = response.lyrics.replace(/\n/g, "<br>");
 
                 // adding lyrics to the lyrics div
                 $("#lyrics").empty();
@@ -40,14 +40,13 @@ $(document).ready(function () {
     // function to show lyrics when "Show Lyrics is clicked"
     $(document).on("click", ".show-lyrics", function () {
         currentArtist = $(this).attr("data-artist");
-        console.log("currentArtist: " + currentArtist);
+        // console.log("currentArtist: " + currentArtist);
         currentSong = $(this).attr("data-song");
-        console.log("currentSong: " + currentSong);
+        // console.log("currentSong: " + currentSong);
         getLyrics(currentArtist, currentSong);
     });
 
     //  --------------------------
-
     // last-fm API
     $("#playlist-button").on("click", function (event) {
         event.preventDefault();
@@ -61,7 +60,7 @@ $(document).ready(function () {
         }).then(function (tracks) {
             // empty old song list, and remake header
             $("#song-link").empty();
-            $("#song-link").html("<h1>Song List</h1>");
+            $("#song-link").prepend("<h3>Top Tracks in " + location + ", " + country + "</h3>");
 
             const tracksResult = tracks.tracks;
 
@@ -98,7 +97,7 @@ $(document).ready(function () {
                 songListDiv.addClass("songListDiv");
 
                 // show artist, song, and url
-                songListDiv.append(newObject.topTrack() + " | <a href=" + newObject.url + " target='_blank'>Play Song</a> | ");
+                songListDiv.append(newObject.topTrack() + " | <a href=" + newObject.url + " target='_blank'>Listen</a> | ");
 
                 // ---------------------------
                 // create link to show lyrics
@@ -110,13 +109,13 @@ $(document).ready(function () {
                 // set artist and song data for lyric functionality
                 lyricsLink.attr("data-artist", newObject.artist);
                 lyricsLink.attr("data-song", newObject.song);
-                
+
                 // append lyricsLink to songListDiv
                 songListDiv.append(lyricsLink);
                 // ---------------------------
 
                 // append songListDiv to the song-link div
-                $("#song-link").prepend(songListDiv);
+                $("#song-link").append(songListDiv);
 
             }
 
