@@ -1,4 +1,4 @@
-# Project-1
+# GeoTunes
 
 [Live Site] (https://plsenh.github.io/Project-1/)
 
@@ -10,7 +10,7 @@
 
 ### Project Goal:
 
-    * Build Something Awesome
+    * GeoTunes allows users to enter a location to produce a 
 
 ### Requirements:
 
