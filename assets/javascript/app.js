@@ -72,10 +72,12 @@ $(document).ready(function () {
                         return topTitle;
                     }
                 };
+                trackArray.push(newObject);
                 console.log(newObject);
                 newObject.topTrack();
+                $("#song-link").append("<br>" + " <a href=" + newObject.url + ">" + newObject.topTrack() + "</a> ");
             }
-            
+            console.log(trackArray);
         })
     });
     // ----------------------
