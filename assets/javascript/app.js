@@ -18,15 +18,27 @@ $(document).ready(function () {
             for (let i = 0; i < tracksResult.track.length; i++) {
                 console.log(tracksResult.track[i].artist.name);
                 console.log(tracksResult.track[i].name);
+                console.log(tracksResult.track[i].url);
                 console.log('--------------------------------');
                 //an empty object and assign to a variable ;
                 // create a for loop to iterate through tracksResult.track[i] {
                     //dynamically create key value pairs using square bracket notation and the index 
                     //}
                 // push your new obj to trackArray
-                let newObject = {};
+                let newObject = {
+                    artist: tracksResult.track[i].artist.name,
+                    song: tracksResult.track[i].name,
+                    url: tracksResult.track[i].url,
+                    topTrack : function() {
+                        var topTitle = this.song + " by " + this.artist;
+                        console.log(topTitle);
+                        return topTitle;
+                    }
+                };
+                console.log(newObject);
+                newObject.topTrack();
             }
-
+            
         })
     });
 
