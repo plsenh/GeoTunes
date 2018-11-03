@@ -2,16 +2,16 @@ $(document).ready(function () {
     //  -----------------------------
     // Genius API
     // global variables
-    var artistName;
-    var songName;
+    var currentArtist;
+    var currentSong;
     var lyrics;
 
     // test to show lyrics for Sia's song, titled "Chandelier"
-    artistName = "Sia";
-    songName = "Chandelier";
-    getLyrics(artistName, songName);
+    currentArtist = "Sia";
+    currentSong = "Chandelier";
+    getLyrics(currentArtist, currentSong);
 
-    // function to show lyrics based on artistName and songName
+    // function to show lyrics based on currentArtist and currentSong
     function getLyrics(artist, song) {
 
         var queryURL = "https://api.lyrics.ovh/v1/" + artist + "/" + song;
@@ -28,9 +28,9 @@ $(document).ready(function () {
 
                 lyrics = response.lyrics.replace(/\n/g, "<br>")
 
-                // Prependng the lyricsDiv to the HTML page in the "#gifs-appear-here" div
+                // adding lyrics to the lyrics div
                 $("#lyrics").append(lyrics);
-                $("#lyrics").prepend("Artist: " + artistName + " | Song: " + songName + "<br>");
+                $("#lyrics").prepend("Artist: " + currentArtist + " | Song: " + currentSong + "<br>");
 
             });
     }
