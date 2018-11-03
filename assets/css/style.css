@@ -1,30 +1,31 @@
 #wrapper {
-    width: 1200px;
-    margin: 25px auto;
+    width: 1300px;
+    margin: 20px;
 }
 
 #left-column {
-    width: 500px;
+    width: 650px;
     float: left;
 
 }
 
 #right-column {
-    width: 500px;
+    width: 650px;
     float: left;
-
 }
 
-#input-container {
+
+#user-input-container {
     margin: 5px;
 }
+
 
 
 #album-art {
     border: 10px;
     background-color: black;
-    width: 450px;
-    height: 450px;
+    width: 600px;
+    height: 500px;
 }
 
 
