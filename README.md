@@ -4,15 +4,19 @@
 
 ### Team
 
-    * Pauline (team lead)
-    * Dirk
-    * Joel
-    * Evan
+    Pauline (team lead)
+    Dirk
+    Joel
+    Evan
 
 ### Project Details:
 
-    * GeoTunes allows users to choose a country and city to generate a list of the top tracks in that location.
-    * Users can click on a link that directs them to listen to the song or to display the lyrics on the page.
+    GeoTunes allows users to choose a country and city to generate a list of the top tracks in that location.
+    Users can click on a link that directs them to listen to the song or to display the lyrics on the page.
+
+API's used:
+* [last-fm] (https://www.last.fm/api/)
+* [lyrics.ovh] (https://lyricsovh.docs.apiary.io/)
 
 ### Requirements:
 
@@ -29,14 +33,14 @@
 
 ### Presentation Requirement
 
-    * 10 minute formal presentation
-    * Explain in detail:
-        * Our overall application's concept
-        * Our Design process
-        * The motivation for its development
-        * The technologies we used (and briefly how they work)
-        * A demonstration of its functionality
-        * Directions for future development
+    10 minute formal presentation
+    Explain in detail:
+        Our overall application's concept
+        Our Design process
+        The motivation for its development
+        The technologies we used (and briefly how they work)
+        A demonstration of its functionality
+        Directions for future development
 
 ### Grading Metrics
 

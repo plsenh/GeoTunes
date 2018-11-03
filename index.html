@@ -31,10 +31,25 @@
     <div id="wrapper">
 
         <div id="left-column">
-            <div id="album-art">
+            <div id="album-art"></div>
+
+            <!-- display song list -->
+            <div id="song-list">
+                <table class="responsive-card-table unstriped">
+                    <thead>
+                        <tr>
+                            <th>Song List</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td id="list" data-label="list"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <br>
-            <div id="song-link"></div>
+
         </div>
 
         <!-- country selector -->
@@ -298,9 +313,11 @@
                     <!-- enter city -->
                     <label for="city">City: </label>
                     <input type="text" id="city" required pattern="[a-zA-Z]+">
+                    <div id="empty-error"></div>
                     <br>
                     <input id="playlist-button" type="submit" value="Media Search">
                 </form>
+                
             </div>
 
             <br>
@@ -311,22 +328,7 @@
                     <h1 id="lyrics-header">Lyrics</h1>
                 </div>
 
-                <!-- display song list -->
-                <div id="song-list">
-                    <table class="responsive-card-table unstriped">
-                        <thead>
-                            <tr>
-                                <th>Song List</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td id="list" data-label="list"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                
 
             </div>
         </div>
