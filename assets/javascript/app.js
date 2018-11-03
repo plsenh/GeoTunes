@@ -1,15 +1,9 @@
 $(document).ready(function () {
     //  -----------------------------
     // Genius API
-    // global variables
     var currentArtist;
     var currentSong;
     var lyrics;
-
-    // test to show lyrics for Sia's song, titled "Chandelier"
-    currentArtist = "Sia";
-    currentSong = "Chandelier";
-    getLyrics(currentArtist, currentSong);
 
     // function to show lyrics based on currentArtist and currentSong
     function getLyrics(artist, song) {
@@ -34,6 +28,13 @@ $(document).ready(function () {
 
             });
     }
+
+        // test to show lyrics for Sia's song, titled "Chandelier"
+        // currentArtist = "Sia";
+        // currentSong = "Chandelier";
+
+        // show lyrics for current song
+        // getLyrics(currentArtist, currentSong);
     //  --------------------------
 
     // last-fm API
@@ -43,16 +44,16 @@ $(document).ready(function () {
         var country = $("#country").val().trim();
         var location = $("#city").val().trim();
         var queryURL = "http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&api_key=" + apiKeyLastFM + "&country=" + country + "&location=" + location + "&format=json";
-
         $.ajax({
-
             url: queryURL,
             method: "GET",
         }).then(function (tracks) {
             const tracksResult = tracks.tracks;
-
             const trackArray = [];
             for (let i = 0; i < tracksResult.track.length; i++) {
+                (tracksResult.track[i].artist.name);
+
+
                 console.log(tracksResult.track[i].artist.name);
                 console.log(tracksResult.track[i].name);
                 console.log(tracksResult.track[i].url);
@@ -79,5 +80,4 @@ $(document).ready(function () {
         })
     });
     // ----------------------
-
 });
