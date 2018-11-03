@@ -1,6 +1,6 @@
 $(document).ready(function () {
+    //  -----------------------------
     // Genius API
-    
     // global variables
     var artistName;
     var songName;
@@ -10,7 +10,6 @@ $(document).ready(function () {
     artistName = "Sia";
     songName = "Chandelier";
     getLyrics(artistName, songName);
-
 
     // function to show lyrics based on artistName and songName
     function getLyrics(artist, song) {
@@ -33,22 +32,6 @@ $(document).ready(function () {
                 var lyricsDiv = $("<div>");
                 lyricsDiv.addClass("lyricsDiv");
 
-                // Creating a paragraph tag with the result item's rating
-                // lyricsDiv.html(lyrics);
-                // p.prepend("Artist:" + artistName);
-                // p.append("Song:" + songName);
-
-                // // Creating and storing an image tag
-                // var gifImage = $("<img>");
-                // // initial source and animation state (still)
-                // gifImage.attr("src", results[i].images.fixed_height_still.url);
-                // gifImage.attr("data-state", "still");
-                // gifImage.addClass("gifShown");
-
-                // // setting up animation states for toggling later
-                // gifImage.attr("data-still", results[i].images.fixed_height_still.url);
-                // gifImage.attr("data-animate", results[i].images.fixed_height.url);
-
                 // // Appending the paragraph and image tag to the lyricsDiv
                 lyricsDiv.append(gifImage);
                 lyricsDiv.append(p);
@@ -57,35 +40,40 @@ $(document).ready(function () {
                 $("#lyrics").append(lyrics);
                 $("#lyrics").prepend("Artist: " + artistName + " | Song: " + songName + "<br>");
 
-
-
-
-
-
-
-                // Creating and storing a div tag
-                var gifDiv = $("<div>");
-                gifDiv.addClass("gifDiv");
-
-                // Creating a paragraph tag with the result item's rating
-                var p = $("<p>").text(results[i].title);
-                p.addClass("song-info");
-                p.append("<BR>Rating: " + results[i].rating);
-
-                
-                // Appending the paragraph and image tag to the gifDiv
-                gifDiv.append(gifImage);
-                gifDiv.append(p);
-
-                // Prependng the gifDiv to the HTML page in the "#gifs-appear-here" div
-                $("#gifs-appear-here").prepend(gifDiv);
-
-
-
-
-
             });
     }
+    //  --------------------------
+    
+    // last-fm API
+    $("#playlist-button").on("click", function (event) {
+        event.preventDefault();
+        var apiKeyLastFM = "8e58ab9ad2424bc14ac0944a801793cd";
+        var country = $("#country").val().trim();
+        var location = $("#city").val().trim();
+        var queryURL = "http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&api_key=" + apiKeyLastFM + "&country=" + country + "&location=" + location + "&format=json";
 
+        $.ajax({
+
+            url: queryURL,
+            method: "GET",
+        }).then(function (tracks) {
+            const tracksResult = tracks.tracks;
+
+            const trackArray = [];
+            for (let i = 0; i < tracksResult.track.length; i++) {
+                console.log(tracksResult.track[i].artist.name);
+                console.log(tracksResult.track[i].name);
+                console.log('--------------------------------');
+                //an empty object and assign to a variable ;
+                // create a for loop to iterate through tracksResult.track[i] {
+                //dynamically create key value pairs using square bracket notation and the index 
+                //}
+                // push your new obj to trackArray
+
+            }
+
+        })
+    });
+    // ----------------------
 
 });
