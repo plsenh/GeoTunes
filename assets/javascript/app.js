@@ -73,10 +73,12 @@ $(document).ready(function () {
                         return topTitle;
                     }
                 };
+                trackArray.push(newObject);
                 console.log(newObject);
                 newObject.topTrack();
+                $("#list").append("<a href=" + newObject.url + " target='_blank'>" + newObject.topTrack() + "</a> ");
             }
-            
+            console.log(trackArray);
         })
     });
     // ----------------------
