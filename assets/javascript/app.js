@@ -30,20 +30,21 @@ $(document).ready(function () {
             });
     }
 
-        // test to show lyrics for Sia's song, titled "Chandelier"
-        // currentArtist = "Sia";
-        // currentSong = "Chandelier";
+    // test to show lyrics for Sia's song, titled "Chandelier"
+    // currentArtist = "Sia";
+    // currentSong = "Chandelier";
 
-        // show lyrics for current song
-        // getLyrics(currentArtist, currentSong);
+    // show lyrics for current song
+    // getLyrics(currentArtist, currentSong);
 
-        // function to show lyrics when "Show Lyrics is clicked"
-        $("#show-lyrics").on("click", function (event) {
-            event.preventDefault();
-            // currentArtist = ;
-            // currentSong = ;
-            getLyrics(currentArtist, currentSong);
-        });
+    // function to show lyrics when "Show Lyrics is clicked"
+    $(document).on("click", ".show-lyrics", function () {
+        currentArtist = $(this).attr("data-artist");
+        console.log("currentArtist: " + currentArtist);
+        currentSong = $(this).attr("data-song");
+        console.log("currentSong: " + currentSong);
+        getLyrics(currentArtist, currentSong);
+    });
 
     //  --------------------------
 
@@ -58,53 +59,72 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET",
         }).then(function (tracks) {
+            // empty old song list, and remake header
+            $("#song-link").empty();
+            $("#song-link").html("<h1>Song List</h1>");
+
             const tracksResult = tracks.tracks;
 
             // initial array to hold tracks
             const trackArray = [];
 
-            // empty old song list
-            $("#song-link").empty();
-            $("#song-link").html("<h1>Song List</h1>");
-
+            // create a for loop to iterate through tracksResult.track[i]
             for (let i = 0; i < tracksResult.track.length; i++) {
-                
-                console.log(tracksResult.track[i].artist.name);
-                console.log(tracksResult.track[i].name);
-                console.log(tracksResult.track[i].url);
-                console.log('--------------------------------');
-                //an empty object and assign to a variable ;
-                // create a for loop to iterate through tracksResult.track[i] {
-                //dynamically create key value pairs using square bracket notation and the index 
-                //}
-                // push your new obj to trackArray
+                // log expected values
+                // console.log("last-fm artist: " + tracksResult.track[i].artist.name);
+                // console.log("last-fm song: " + tracksResult.track[i].name);
+                // console.log("last-fm url: " + tracksResult.track[i].url);
+                // console.log('--------------------------------');
+
+                // dynamically create key value pairs using square bracket notation and the index 
                 let newObject = {
                     artist: tracksResult.track[i].artist.name,
                     song: tracksResult.track[i].name,
                     url: tracksResult.track[i].url,
-                    topTrack : function() {
+
+                    // function to pair song and artist name
+                    topTrack: function () {
                         var topTitle = this.song + " by " + this.artist;
-                        console.log(topTitle);
                         return topTitle;
                     }
                 };
+
+                // push newObject to trackArray & get topTrack
                 trackArray.push(newObject);
-                console.log(newObject);
-                
-                // get next track
                 newObject.topTrack();
 
-                // push new object to trackArray
-                
-                
+                // create songListDiv to initially hold artist, song, url
+                var songListDiv = $("<div>");
+                songListDiv.addClass("songListDiv");
 
+                // show artist, song, and url
+                songListDiv.append(newObject.topTrack() + " | <a href=" + newObject.url + " target='_blank'>Play Song</a> | ");
 
-                // $("#list").append("<a href=" + newObject.url + " target='_blank'>" + newObject.topTrack() + "</a>");
-                $("#song-link").append("<tr><td>" + newObject.topTrack() +"</td>");
-                $("#song-link").append("<td> <a href=" + newObject.url + " target='_blank'>Play Song</a> </td>");
-                $("#song-link").append("<td> <span id='show-lyrics'><a href='#'>Show Lyrics</a></span> </td></tr>");
+                // ---------------------------
+                // create link to show lyrics
+                var lyricsLink = $("<a>");
+                lyricsLink.addClass("show-lyrics");
+                lyricsLink.attr("href", "#");
+                lyricsLink.text("Show Lyrics");
+
+                // set artist and song data for lyric functionality
+                lyricsLink.attr("data-artist", newObject.artist);
+                lyricsLink.attr("data-song", newObject.song);
+                
+                // append lyricsLink to songListDiv
+                songListDiv.append(lyricsLink);
+                // ---------------------------
+
+                // append songListDiv to the song-link div
+                $("#song-link").prepend(songListDiv);
+
             }
-            console.log(trackArray);
+
+            // test to console each object in trackArray
+            // for (let i = 0; i < trackArray.length; i++) {
+            //     console.log("track " + i + ": " + trackArray[i].artist + " - " + trackArray[i].song + " (" + trackArray[i].url + ")");
+            // }
+
         })
     });
     // ----------------------
