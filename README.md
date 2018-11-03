@@ -17,9 +17,9 @@ Users can click on a link that directs them to listen to the song or to display 
 
 API's used:
 
-        [last-fm] (https://www.last.fm/api)
+[last-fm] (https://www.last.fm/api/)
 
-        [lyrics.ovh] (https://lyricsovh.docs.apiary.io/)
+[lyrics.ovh] (https://lyricsovh.docs.apiary.io/)
 
 ### Requirements:
 
