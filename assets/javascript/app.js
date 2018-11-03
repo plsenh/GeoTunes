@@ -59,6 +59,7 @@ $(document).ready(function () {
         }).then(function (tracks) {
             // empty old song list, and remake header
             $("#list").empty();
+            $("#lyrics").empty();
 
             // if (location != "") {
                 // clear error text, if any
