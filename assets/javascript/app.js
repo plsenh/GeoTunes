@@ -60,11 +60,11 @@ $(document).ready(function () {
             method: "GET",
         }).then(function (tracks) {
             // empty old song list, and remake header
-            $("#song-link").empty();
+            $("#list").empty();
 
             if (location != "") {
+                // clear error text, if any
                 $("#empty-error").empty();
-                $("#song-link").prepend("<h3>Top Tracks in " + country + "</h3>");
 
                 const tracksResult = tracks.tracks;
 
@@ -119,7 +119,7 @@ $(document).ready(function () {
                     // ---------------------------
 
                     // append songListDiv to the song-link div
-                    $("#song-link").append(songListDiv);
+                    $("#list").append(songListDiv);
                 }
             }
 
