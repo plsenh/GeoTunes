@@ -28,14 +28,6 @@ $(document).ready(function () {
 
                 lyrics = response.lyrics.replace(/\n/g, "<br>")
 
-                // Creating and storing a div tag
-                var lyricsDiv = $("<div>");
-                lyricsDiv.addClass("lyricsDiv");
-
-                // // Appending the paragraph and image tag to the lyricsDiv
-                lyricsDiv.append(gifImage);
-                lyricsDiv.append(p);
-
                 // Prependng the lyricsDiv to the HTML page in the "#gifs-appear-here" div
                 $("#lyrics").append(lyrics);
                 $("#lyrics").prepend("Artist: " + artistName + " | Song: " + songName + "<br>");
@@ -43,7 +35,7 @@ $(document).ready(function () {
             });
     }
     //  --------------------------
-    
+
     // last-fm API
     $("#playlist-button").on("click", function (event) {
         event.preventDefault();
