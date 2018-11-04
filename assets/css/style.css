@@ -1,3 +1,7 @@
+#header {
+    background-image: url("../images/cool-grey-wallpapers-backgrounds-1.png");
+}
+
 body,
 #wrapper {
     background: rgb(245, 246, 246);
@@ -14,11 +18,10 @@ body,
 
 #header {
     font-family: 'Patua One', cursive;
-    color: darkred;
-    font-size: 95px;
+    color: rgb(255, 255, 255);
+    font-size: 85px;
     text-align: center;
-    text-shadow: 2px 2px 6px #473939;
-
+    text-shadow: 2px 2px 6px #000000;
 }
 
 #playlist-button {
@@ -29,7 +32,6 @@ body,
     font-family: 'Open Sans', sans-serif;
     font-size: 25px;
     border-radius: 20px;
-
 }
 
 #country,
@@ -43,7 +45,7 @@ body,
 
 #lyrics {
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #song-link {
@@ -54,19 +56,20 @@ body,
 }
 
 #wrapper {
-    width: 1300px;
-    margin: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #left-column {
-    width: 650px;
+    max-width: 570px;
     float: left;
-
+    padding: 10px;
 }
 
 #right-column {
-    width: 650px;
+    max-width: 580px;
     float: left;
+    padding: 10px;
 }
 
 
@@ -74,21 +77,27 @@ body,
     margin: 5px;
 }
 
+#media {
+    font-family: 'Open Sans', sans-serif;
+}
+
 
 #album-art {
     border: 10px;
     background-color: black;
-    width: 600px;
+    max-width: 570px;
     height: 500px;
 }
 
 
-#song-list {
-    width: 400px;
-
-}
 
 /* code for Song List div */
+#song-list {
+    width: 550px;
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+}
+
 .responsive-card-table {
     border-collapse: collapse;
 }
@@ -98,7 +107,8 @@ body,
 }
 
 .responsive-card-table th {
-    background-color: #e6e6e6;
+    background-color: rgb(16, 16, 61);
+    color: white;
 }
 
 .responsive-card-table tr,

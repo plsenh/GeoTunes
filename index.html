@@ -11,8 +11,8 @@
         crossorigin="anonymous">
 
     <!-- <link rel="stylesheet" type="text/css" href="assets/css/app.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="assets/css/foundation.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/foundation.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans+Narrow|Patua+One" rel="stylesheet">
 
@@ -31,29 +31,8 @@
     <div id="wrapper">
 
         <div id="left-column">
-            <div id="album-art"></div>
+            <!-- country selector -->
 
-            <!-- display song list -->
-            <div id="song-list">
-                <table class="responsive-card-table unstriped">
-                    <thead>
-                        <tr>
-                            <th>Song List</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td id="list" data-label="list"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-        <!-- country selector -->
-        <div id="right-column">
             <div id="user-input-container">
                 <form id="media" data-abide>
                     <label for="country">Country: </label>
@@ -314,21 +293,38 @@
                     <label for="city">City: </label>
                     <input type="text" id="city" required pattern="[a-zA-Z]+">
                     <div id="empty-error"></div>
-                    <br>
                     <input id="playlist-button" type="submit" value="Media Search">
                 </form>
-                
             </div>
-
             <br>
+            <!-- display song list -->
+            <div id="song-list">
+                <table class="responsive-card-table unstriped">
+                    <thead>
+                        <tr>
+                            <th>Song List</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td id="list" data-label="list"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="right-column">
+
+            <div id="album-art"></div>
+
             <div id="lyrics_song_list">
 
                 <!-- display lyrics -->
                 <div id="lyrics">
                     <h1 id="lyrics-header">Lyrics</h1>
                 </div>
-
-                
 
             </div>
         </div>
