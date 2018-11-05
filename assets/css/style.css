@@ -1,3 +1,9 @@
+html {
+    box-sizing: border-box;
+    background-image: url("../images/seamless_tiled_background_textures-100.jpg");
+
+}
+
 #header {
     background-image: url("../images/cool-grey-wallpapers-backgrounds-1.png");
 }
@@ -14,6 +20,19 @@ body,
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f6f6', endColorstr='#f5f6f6', GradientType=0);
     /* IE6-9 */
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 23px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 #header {
@@ -40,36 +59,36 @@ body,
 }
 
 #lyrics-header {
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    color: darkblue;
+    font-style: italic;
 }
 
 #lyrics {
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-}
-
-#song-link {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 22px;
-    text-align: center;
-    color: darkblue;
 }
 
 #wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #left-column {
-    max-width: 570px;
+    max-width: 1200;
     float: left;
     padding: 10px;
+    margin: auto;
 }
 
 #right-column {
-    max-width: 580px;
+    max-width: auto;
     float: left;
     padding: 10px;
+    margin: auto;
 }
 
 
@@ -93,9 +112,13 @@ body,
 
 /* code for Song List div */
 #song-list {
-    width: 550px;
+    width: auto;
     font-family: 'Open Sans', sans-serif;
     color: black;
+}
+
+.songListDiv {
+    line-height: 25px;
 }
 
 .responsive-card-table {
@@ -117,7 +140,30 @@ body,
     border: 1px solid #0a0a0a;
 }
 
+
 @media screen and (max-width: 640px) {
+
+    #album-art {
+        display: none;
+    }
+
+    #header {
+        font-size: 70px;
+    }
+
+    #country,
+    #city {
+        width: 300px;
+    }
+
+    .songListDiv {
+        font-size: 12px;
+        line-height: 35px;
+    }
+}
+
+/* disabled due to problem with responsiveness on mobile
+/* @media screen and (max-width: 640px) {
     .responsive-card-table {}
 
     .responsive-card-table thead tr {
@@ -172,4 +218,4 @@ body,
         top: 1px;
         z-index: 0;
     }
-}
+} */
