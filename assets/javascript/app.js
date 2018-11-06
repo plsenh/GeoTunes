@@ -52,6 +52,9 @@ $(document).ready(function () {
             $("#list").empty();
             $("#lyrics").empty();
 
+            // show song-list div
+            $("#song-list").show();
+
             const tracksResult = tracks.tracks;
 
             // initial array to hold tracks
@@ -111,5 +114,7 @@ $(document).ready(function () {
 
         })
     });
-    // ----------------------
+    
+    // initially hide the song list div
+    $("#song-list").hide();
 });
