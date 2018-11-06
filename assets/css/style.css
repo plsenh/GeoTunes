@@ -1,5 +1,10 @@
 html {
     box-sizing: border-box;
+}
+
+
+body,
+#wrapper {
     background-image: url("../images/seamless_tiled_background_textures-100.jpg");
 
 }
@@ -8,19 +13,6 @@ html {
     background-image: url("../images/cool-grey-wallpapers-backgrounds-1.png");
 }
 
-body,
-#wrapper {
-    background: rgb(245, 246, 246);
-    /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(245, 246, 246, 1) 0%, rgba(219, 220, 226, 1) 21%, rgba(184, 186, 198, 1) 49%, rgba(221, 223, 227, 1) 80%, rgba(245, 246, 246, 1) 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(245, 246, 246, 1) 0%, rgba(219, 220, 226, 1) 21%, rgba(184, 186, 198, 1) 49%, rgba(221, 223, 227, 1) 80%, rgba(245, 246, 246, 1) 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(245, 246, 246, 1) 0%, rgba(219, 220, 226, 1) 21%, rgba(184, 186, 198, 1) 49%, rgba(221, 223, 227, 1) 80%, rgba(245, 246, 246, 1) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f6f6', endColorstr='#f5f6f6', GradientType=0);
-    /* IE6-9 */
-}
 
 p {
     font-family: 'Open Sans', sans-serif;
@@ -29,10 +21,9 @@ p {
 }
 
 h3 {
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
-
 }
 
 #header {
@@ -69,26 +60,22 @@ h3 {
 
 #lyrics {
     font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
 }
 
 #wrapper {
-    max-width: auto;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    display: flex;
 }
 
 #left-column {
-    max-width: 1200;
-    float: left;
-    padding: 10px;
-    margin: auto;
+    width: 50%;
+    margin: 0 20px 0 50px;
 }
 
 #right-column {
-    max-width: auto;
-    float: left;
-    padding: 10px;
-    margin: auto;
+    width: 50%;
+    margin: 0 50px 0 20px;
 }
 
 
@@ -104,7 +91,7 @@ h3 {
 #album-art {
     border: 10px;
     background-color: black;
-    max-width: 570px;
+    max-width: 100%;
     height: 500px;
 }
 
@@ -115,10 +102,11 @@ h3 {
     width: auto;
     font-family: 'Open Sans', sans-serif;
     color: black;
+    font-size: 18px;
 }
 
 .songListDiv {
-    line-height: 25px;
+    line-height: 30px;
 }
 
 .responsive-card-table {
@@ -140,8 +128,43 @@ h3 {
     border: 1px solid #0a0a0a;
 }
 
+footer {
+    clear: both;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    visibility: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+}
 
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 1290px) {
+    #song-list {
+        width: auto;
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    #wrapper {
+        display: block;
+    }
+
+    #left-column {
+        width: auto;
+        padding: 10px;
+        margin: auto;
+    }
+
+    #right-column {
+        width: 100%;
+        padding: 10px;
+        margin: auto;
+    }
+
 
     #album-art {
         display: none;
@@ -151,14 +174,22 @@ h3 {
         font-size: 70px;
     }
 
+
     #country,
     #city {
         width: 300px;
     }
 
+
     .songListDiv {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 35px;
+    }
+
+
+    footer {
+        visibility: visible;
+
     }
 }
 
