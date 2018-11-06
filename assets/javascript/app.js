@@ -27,9 +27,9 @@ $(document).ready(function () {
                 $("#lyrics").append(lyrics);
 
                 // if no lyrics are available for selected song
-                if (lyrics == "") {
-                    lyrics = "Sorry, lyrics not available at this time";
-                }
+                // if (lyrics == "") {
+                //     lyrics = "Sorry, lyrics not available at this time";
+                // }
             });
     }
 
@@ -59,7 +59,7 @@ $(document).ready(function () {
             $("#list").empty();
             $("#lyrics").empty();
             $("#empty-error").empty();
-            
+
             // only show results if user enters a limit from 1 to 50
             if (limit > 0 && limit < 51) {
 
@@ -101,7 +101,7 @@ $(document).ready(function () {
                     songListDiv.addClass("songListDiv");
 
                     // show song list only there are results
-                    if (trackArray.length > 0) {
+                    // if (trackArray.length > 0) {
                         songListDiv.append(newObject.topTrack() + " | <a href=" + newObject.url + " target='_blank'>Listen</a> | ");
 
                         // create link to show lyrics
@@ -116,7 +116,7 @@ $(document).ready(function () {
 
                         // append lyricsLink to songListDiv
                         songListDiv.append(lyricsLink);
-                    }
+                    // }
 
                     // append songListDiv to the song-link div
                     $("#list").append(songListDiv);
