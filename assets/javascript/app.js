@@ -25,6 +25,11 @@ $(document).ready(function () {
                 $("#lyrics").append("<h1 id='lyrics-header'>Lyrics</h1>");
                 $("#lyrics").append("<h3>Artist: " + currentArtist + " | Song: " + currentSong + "</h3>");
                 $("#lyrics").append(lyrics);
+
+                // if no lyrics are available for selected song
+                if (lyrics == "") {
+                    lyrics = "Sorry, lyrics not available at this time";
+                }
             });
     }
 
@@ -43,11 +48,12 @@ $(document).ready(function () {
         var apiKeyLastFM = "8e58ab9ad2424bc14ac0944a801793cd";
         var country = $("#country").val().trim();
         var location = $("#city").val().trim();
-        var queryURL = "https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&api_key=" + apiKeyLastFM + "&country=" + country + "&location=" + location + "&format=json";
+        var queryURL = "https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&api_key=" + apiKeyLastFM + "&country=" + country + "&location=" + location + "&limit=25&format=json";
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (tracks) {
+            // console.log(queryURL);
             // empty old song & lyric list
             $("#list").empty();
             $("#lyrics").empty();
@@ -60,13 +66,14 @@ $(document).ready(function () {
             // initial array to hold tracks
             const trackArray = [];
 
+
             // create a for loop to iterate through tracksResult.track[i]
             for (let i = 0; i < tracksResult.track.length; i++) {
                 // log expected values
-                // console.log("last-fm artist: " + tracksResult.track[i].artist.name);
-                // console.log("last-fm song: " + tracksResult.track[i].name);
-                // console.log("last-fm url: " + tracksResult.track[i].url);
-                // console.log('--------------------------------');
+                console.log("last-fm artist: " + tracksResult.track[i].artist.name);
+                console.log("last-fm song: " + tracksResult.track[i].name);
+                console.log("last-fm url: " + tracksResult.track[i].url);
+                console.log('--------------------------------');
 
                 // dynamically create key value pairs using square bracket notation and the index 
                 let newObject = {
@@ -88,8 +95,11 @@ $(document).ready(function () {
                 // create songListDiv to show artist, song & url
                 var songListDiv = $("<div>");
                 songListDiv.addClass("songListDiv");
-                songListDiv.append(newObject.topTrack() + " | <a href=" + newObject.url + " target='_blank'>Listen</a> | ");
 
+                // if () {
+                    songListDiv.append(newObject.topTrack() + " | <a href=" + newObject.url + " target='_blank'>Listen</a> | ");
+                // }
+                // else {}
                 // create link to show lyrics
                 var lyricsLink = $("<a>");
                 lyricsLink.addClass("show-lyrics");
@@ -114,7 +124,7 @@ $(document).ready(function () {
 
         })
     });
-    
+
     // initially hide the song list div
     $("#song-list").hide();
 });
