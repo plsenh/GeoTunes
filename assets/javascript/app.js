@@ -41,9 +41,12 @@ $(document).ready(function () {
     $("#playlist-button").on("click", function (event) {
         event.preventDefault();
         var apiKeyLastFM = "8e58ab9ad2424bc14ac0944a801793cd";
-        var country = $("#country").val().trim();
-        var location = $("#city").val().trim();
-        var queryURL = "https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&api_key=" + apiKeyLastFM + "&country=" + country + "&location=" + location + "&format=json";
+        var countryID = $("#country").val();
+        var country = $("#country option:selected").text();
+        // var location = $("#city").val().trim();
+        var queryURL = "https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&api_key=" + apiKeyLastFM + "&country=" + country + "&format=json";
+        console.log("countryID: " + countryID);
+        console.log("country: " + country);
         $.ajax({
             url: queryURL,
             method: "GET",
@@ -54,6 +57,9 @@ $(document).ready(function () {
 
             // show song-list div
             $("#song-list").show();
+
+            // displays country flag of option selected
+            $("#country-flag").append("<img src=" + "https://www.countryflags.io/" + countryID + "/shiny/64.png>");
 
             const tracksResult = tracks.tracks;
 
