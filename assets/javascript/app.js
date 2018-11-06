@@ -93,7 +93,7 @@ $(document).ready(function () {
                 // create link to show lyrics
                 var lyricsLink = $("<a>");
                 lyricsLink.addClass("show-lyrics");
-                lyricsLink.attr("href", "#");
+                lyricsLink.attr("href", "#lyrics");
                 lyricsLink.text("Show Lyrics");
 
                 // set artist and song data for lyric functionality
