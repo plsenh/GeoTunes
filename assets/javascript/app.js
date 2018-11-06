@@ -52,6 +52,9 @@ $(document).ready(function () {
             $("#list").empty();
             $("#lyrics").empty();
 
+            // show song-list div
+            $("#song-list").show();
+
             const tracksResult = tracks.tracks;
 
             // initial array to hold tracks
@@ -90,7 +93,7 @@ $(document).ready(function () {
                 // create link to show lyrics
                 var lyricsLink = $("<a>");
                 lyricsLink.addClass("show-lyrics");
-                lyricsLink.attr("href", "#");
+                lyricsLink.attr("href", "#lyrics");
                 lyricsLink.text("Show Lyrics");
 
                 // set artist and song data for lyric functionality
@@ -111,5 +114,7 @@ $(document).ready(function () {
 
         })
     });
-    // ----------------------
+    
+    // initially hide the song list div
+    $("#song-list").hide();
 });
