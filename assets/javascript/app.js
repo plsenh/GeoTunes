@@ -1,8 +1,21 @@
 $(document).ready(function () {
+    
+    // initially hide the song list div
+    $("#song-list").hide();
+
     // Genius API variables
     var currentArtist;
     var currentSong;
     var lyrics;
+
+    // on click, show lyrics of selected song
+    $(document).on("click", ".show-lyrics", function () {
+        currentArtist = $(this).attr("data-artist");
+        // console.log("currentArtist: " + currentArtist);
+        currentSong = $(this).attr("data-song");
+        // console.log("currentSong: " + currentSong);
+        getLyrics(currentArtist, currentSong);
+    });
 
     // function to get lyrics based on artist and song names
     function getLyrics(artist, song) {
@@ -17,41 +30,30 @@ $(document).ready(function () {
                 // console.log(queryURL);
                 // console.log(response.lyrics);
 
-                // parse lyrics correctly
+                // parse lyrics
                 lyrics = response.lyrics.replace(/\n/g, "<br>");
 
                 // adding lyrics to the lyrics div
                 $("#lyrics").empty();
+                $("#lyrics").append("<h1 id='lyrics-header'>Lyrics</h1>");
+                $("#lyrics").append("<h3>Artist: " + currentArtist + " | Song: " + currentSong + "</h3>");
 
                 // backup message if no lyrics are available for selected song
-                if (lyrics = "") {
+                if (lyrics.trim() == "") {
                     lyrics = "Sorry, lyrics not available at this time";
                 }
 
-                $("#lyrics").append("<h1 id='lyrics-header'>Lyrics</h1>");
-                $("#lyrics").append("<h3>Artist: " + currentArtist + " | Song: " + currentSong + "</h3>");
                 $("#lyrics").append(lyrics);
-                
             });
     }
-
-    // on click, show lyrics of selected song
-    $(document).on("click", ".show-lyrics", function () {
-        currentArtist = $(this).attr("data-artist");
-        // console.log("currentArtist: " + currentArtist);
-        currentSong = $(this).attr("data-song");
-        // console.log("currentSong: " + currentSong);
-        getLyrics(currentArtist, currentSong);
-    });
 
     // on click, get top track data from last-fm API
     $("#playlist-button").on("click", function (event) {
         event.preventDefault();
-        var apiKeyLastFM = "8e58ab9ad2424bc14ac0944a801793cd";
 
+        var apiKeyLastFM = "8e58ab9ad2424bc14ac0944a801793cd";
         var countryID = $("#country").val();
         var country = $("#country option:selected").text();
-
         var limit = $("#numresults").val().trim();
         var queryURL = "https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&api_key=" + apiKeyLastFM + "&country=" + country + "&limit=" + limit + "&format=json";
 
@@ -64,6 +66,7 @@ $(document).ready(function () {
             $("#list").empty();
             $("#lyrics").empty();
             $("#empty-error").empty();
+            $("#country-flag").empty();
 
             // only show results if user enters a limit from 1 to 50
             if (limit > 0 && limit < 51) {
@@ -100,8 +103,10 @@ $(document).ready(function () {
                         }
                     };
 
-                    // push newObject to trackArray & get topTrack
-                    trackArray.push(newObject);
+                    // push newObject to trackArray
+                    // trackArray.push(newObject);
+
+                    // get topTrack
                     newObject.topTrack();
 
                     // create songListDiv to show artist, song & url
@@ -143,6 +148,4 @@ $(document).ready(function () {
         })
     });
 
-    // initially hide the song list div
-    $("#song-list").hide();
 });
