@@ -63,7 +63,7 @@ $(document).ready(function () {
             $("#lyrics").empty();
             $("#empty-error").empty();
             // displays country flag of option selected
-            $("#country-flag").append("<img src=" + "https://www.countryflags.io/" + countryID + "/flat/64.png>");
+            $("#country-flag").append("<img src=assets/flags/" + countryID + ".svg>");
 
 
             // only show results if user enters a limit from 1 to 50
