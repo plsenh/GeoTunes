@@ -11,7 +11,7 @@
 
 ### Project Details:
 
-    GeoTunes allows users to choose a country and city to generate a list of the top tracks in that location.
+    GeoTunes allows users to choose a country and the number of songs to generate a list of the top tracks in that location. GeoTunes also displays the flag of the nation selected.
     Users can click on a link that directs them to listen to the song or to display the lyrics on the page.
 
 APIs used:
@@ -26,7 +26,7 @@ APIs used:
     * Must have a polished frontend / UI
     * Must meet good quality coding standards (indentation, scoping, naming)
     * Must NOT use alerts, confirms, or prompts (look into modals!)
-    * Must have some sort of repeating element (table, columns, etc)
+    * Must have some sort of repeating element (table, columns, etc.)
     * Must use Bootstrap or Alternative CSS Framework
     * Must be Deployed (GitHub Pages or Firebase)
     * Must have User Input Validation
