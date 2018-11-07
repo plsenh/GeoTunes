@@ -46,10 +46,13 @@ $(document).ready(function () {
     $("#playlist-button").on("click", function (event) {
         event.preventDefault();
         var apiKeyLastFM = "8e58ab9ad2424bc14ac0944a801793cd";
-        var country = $("#country").val().trim();
-        // var location = $("#city").val().trim();
+
+        var countryID = $("#country").val();
+        var country = $("#country option:selected").text();
+
         var limit = $("#numresults").val().trim();
         var queryURL = "https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&api_key=" + apiKeyLastFM + "&country=" + country + "&limit=" + limit + "&format=json";
+
         $.ajax({
             url: queryURL,
             method: "GET",
@@ -59,6 +62,9 @@ $(document).ready(function () {
             $("#list").empty();
             $("#lyrics").empty();
             $("#empty-error").empty();
+            // displays country flag of option selected
+            $("#country-flag").append("<img src=" + "https://www.countryflags.io/" + countryID + "/shiny/64.png>");
+
 
             // only show results if user enters a limit from 1 to 50
             if (limit > 0 && limit < 51) {
@@ -122,7 +128,6 @@ $(document).ready(function () {
                     $("#list").append(songListDiv);
                 }
             }
-
             // show error message if they do not enter a valid number
             else {
                 // hide song-list div
