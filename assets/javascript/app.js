@@ -72,7 +72,7 @@ $(document).ready(function () {
             if (limit > 0 && limit < 51) {
 
                 // displays country flag of option selected
-                $("#country-flag").append("<img src=assets/flags/" + countryID + ".svg>");
+                $("#country-flag").append("<img src=assets/flags/" + countryID.lowercase() + ".svg>");
 
                 // show song-list div
                 $("#song-list").show();
