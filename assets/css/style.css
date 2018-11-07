@@ -186,6 +186,9 @@ footer {
         line-height: 35px;
     }
 
+    #country-flag {
+        min-width: 150px;
+    }
 
     footer {
         visibility: visible;
