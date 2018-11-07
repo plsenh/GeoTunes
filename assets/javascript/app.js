@@ -62,6 +62,9 @@ $(document).ready(function () {
             $("#list").empty();
             $("#lyrics").empty();
             $("#empty-error").empty();
+            // displays country flag of option selected
+            $("#country-flag").append("<img src=" + "https://www.countryflags.io/" + countryID + "/shiny/64.png>");
+
 
             // only show results if user enters a limit from 1 to 50
             if (limit > 0 && limit < 51) {
@@ -125,72 +128,12 @@ $(document).ready(function () {
                     $("#list").append(songListDiv);
                 }
             }
-
-<<<<<<< HEAD
-            // show song-list div
-            $("#song-list").show();
-
-            // displays country flag of option selected
-            $("#country-flag").append("<img src=" + "https://www.countryflags.io/" + countryID + "/shiny/64.png>");
-
-            const tracksResult = tracks.tracks;
-
-            // initial array to hold tracks
-            const trackArray = [];
-
-            // create a for loop to iterate through tracksResult.track[i]
-            for (let i = 0; i < tracksResult.track.length; i++) {
-                // log expected values
-                // console.log("last-fm artist: " + tracksResult.track[i].artist.name);
-                // console.log("last-fm song: " + tracksResult.track[i].name);
-                // console.log("last-fm url: " + tracksResult.track[i].url);
-                // console.log('--------------------------------');
-
-                // dynamically create key value pairs using square bracket notation and the index 
-                let newObject = {
-                    artist: tracksResult.track[i].artist.name,
-                    song: tracksResult.track[i].name,
-                    url: tracksResult.track[i].url,
-
-                    // function to pair song and artist name
-                    topTrack: function () {
-                        var topTitle = this.song + " by " + this.artist;
-                        return topTitle;
-                    }
-                };
-
-                // push newObject to trackArray & get topTrack
-                trackArray.push(newObject);
-                newObject.topTrack();
-
-                // create songListDiv to show artist, song & url
-                var songListDiv = $("<div>");
-                songListDiv.addClass("songListDiv");
-                songListDiv.append(newObject.topTrack() + " | <a href=" + newObject.url + " target='_blank'>Listen</a> | ");
-
-                // create link to show lyrics
-                var lyricsLink = $("<a>");
-                lyricsLink.addClass("show-lyrics");
-                lyricsLink.attr("href", "#lyrics");
-                lyricsLink.text("Show Lyrics");
-
-                // set artist and song data for lyric functionality
-                lyricsLink.attr("data-artist", newObject.artist);
-                lyricsLink.attr("data-song", newObject.song);
-
-                // append lyricsLink to songListDiv
-                songListDiv.append(lyricsLink);
-
-                // append songListDiv to the song-link div
-                $("#list").append(songListDiv);
-=======
             // show error message if they do not enter a valid number
             else {
                 // hide song-list div
                 $("#song-list").hide();
                 // error message
                 $("#empty-error").text("Please enter a number from 1 to 50.");
->>>>>>> master
             }
 
             // test to console each object in trackArray
