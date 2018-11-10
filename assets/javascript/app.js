@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     // initially hide the song list div
     $("#song-list").hide();
 
@@ -27,8 +27,6 @@ $(document).ready(function () {
             })
             // After data comes back from the request
             .then(function (response) {
-                // console.log(queryURL);
-                // console.log(response.lyrics);
 
                 // parse lyrics
                 lyrics = response.lyrics.replace(/\n/g, "<br>");
@@ -61,8 +59,7 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET",
         }).then(function (tracks) {
-            // console.log(queryURL);
-            // empty old song & lyric list
+
             $("#list").empty();
             $("#lyrics").empty();
             $("#empty-error").empty();
@@ -84,11 +81,6 @@ $(document).ready(function () {
 
                 // create a for loop to iterate through tracksResult.track[i]
                 for (let i = 0; i < tracksResult.track.length; i++) {
-                    // log expected values
-                    // console.log("last-fm artist: " + tracksResult.track[i].artist.name);
-                    // console.log("last-fm song: " + tracksResult.track[i].name);
-                    // console.log("last-fm url: " + tracksResult.track[i].url);
-                    // console.log('--------------------------------');
 
                     // dynamically create key value pairs using square bracket notation and the index 
                     let newObject = {
@@ -102,9 +94,6 @@ $(document).ready(function () {
                             return topTitle;
                         }
                     };
-
-                    // push newObject to trackArray
-                    // trackArray.push(newObject);
 
                     // get topTrack
                     newObject.topTrack();
@@ -139,11 +128,6 @@ $(document).ready(function () {
                 // error message
                 $("#empty-error").text("Please enter a number from 1 to 50.");
             }
-
-            // test to console each object in trackArray
-            // for (let i = 0; i < trackArray.length; i++) {
-            //     console.log("track " + i + ": " + trackArray[i].artist + " - " + trackArray[i].song + " (" + trackArray[i].url + ")");
-            // }
 
         })
     });
