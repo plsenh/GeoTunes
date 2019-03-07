@@ -6,7 +6,7 @@
 
 ---
 
-## About **GeoTunes**:
+## About GeoTunes:
 
 GeoTunes was created with the idea of using APIs to create a playlist based on geographic location. The user selects the country and the number of songs desired. Additionally, GeoTunes was to display lyrics for the songs of the playlist, as well as a video of the chosen song. User input validation was needed for the number of songs selected.
 
@@ -35,14 +35,16 @@ GeoTunes can either be run from the hosted site (link is above) or you can downl
 
 ## Built with:
 
+- Bootstrap
 - CSS3
-- Foundation CSS
+- [Foundation CSS](https://foundation.zurb.com/sites/docs/v/5.5.3/css.html) - Responsive front-end framework.
 - HTML5
-- JavaScript
-- jQuery
-- LastFM API
-- Lyrics.ovh API
-- Normalize CSS
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - High-level programming language.
+- [jQuery](https://jquery.com/) - JavaScript library
+- [last-fm API](https://www.last.fm/api/) - API to retrieve song information.
+- [lyrics.ovh API](https://lyricsovh.docs.apiary.io/) - API to retrieve song lyrics.
+- [Normalize.css](https://necolas.github.io/normalize.css/) - A modern, HTML5-ready alternative to CSS resets.
+- [Visual Studio Code](https://code.visualstudio.com/) - source code editor developed by Microsoft
 
 ## Authors:
 
