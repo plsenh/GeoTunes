@@ -11,9 +11,7 @@ $(document).ready(function () {
     // on click, show lyrics of selected song
     $(document).on("click", ".show-lyrics", function () {
         currentArtist = $(this).attr("data-artist");
-        // console.log("currentArtist: " + currentArtist);
         currentSong = $(this).attr("data-song");
-        // console.log("currentSong: " + currentSong);
         getLyrics(currentArtist, currentSong);
     });
 
