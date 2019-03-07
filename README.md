@@ -1,6 +1,6 @@
 # GeoTunes
 
-## [Go To Deployed App](https://plsenh.github.io/GeoTunes/)
+## [Go to deployed app](https://plsenh.github.io/GeoTunes/)
 
 ![screenshot](/assets/images/GeoTunes.PNG)
 
