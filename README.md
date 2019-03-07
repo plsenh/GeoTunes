@@ -33,7 +33,7 @@ GeoTunes can either be run from the hosted site (link is above) or you can downl
 
 ## Demo:
 
-![Demo](./assets/images/demo.gif)
+![Demo](./assets/images/GeoTunes_demo.gif)
 
 ## Built with:
 
