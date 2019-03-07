@@ -2,9 +2,9 @@
 
 ---
 
-![screenshot](/assets/images/GeoTunes.PNG)
+## [Go To Deployed Site](https://plsenh.github.io/GeoTunes/)
 
-[View Deployed Site](https://plsenh.github.io/GeoTunes/)
+![screenshot](/assets/images/GeoTunes.PNG)
 
 ---
 
