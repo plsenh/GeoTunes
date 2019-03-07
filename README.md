@@ -35,7 +35,6 @@ GeoTunes can either be run from the hosted site (link is above) or you can downl
 
 ## Built with:
 
-- Bootstrap
 - CSS3
 - [Foundation CSS](https://foundation.zurb.com/sites/docs/v/5.5.3/css.html) - Responsive front-end framework.
 - HTML5
