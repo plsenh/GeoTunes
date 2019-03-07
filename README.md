@@ -1,59 +1,54 @@
 # GeoTunes
 
-[Deployed Site] (https://plsenh.github.io/Project-1/)
+---
 
-### Team
+![screenshot](/assets/images/GeoTunes.PNG)
 
-    Pauline (team lead)
-    Dirk
-    Joel
-    Evan
+[View Deployed Site](https://plsenh.github.io/GeoTunes/)
 
-### Project Details:
+---
 
-    GeoTunes allows users to choose a country and the number of songs to generate a list of the top tracks in that location. GeoTunes also displays the flag of the nation selected.
-    Users can click on a link that directs them to listen to the song or to display the lyrics on the page.
+## About **GeoTunes**:
 
-APIs used:
-* [last-fm] (https://www.last.fm/api/)
-* [lyrics.ovh] (https://lyricsovh.docs.apiary.io/)
+GeoTunes was created with the idea of using APIs to create a playlist based on geographic location. The user selects the country and the number of songs desired. Additionally, GeoTunes was to display lyrics for the songs of the playlist, as well as a video of the chosen song. User input validation was needed for the number of songs selected.
 
-### Requirements:
+## Description of the problem:
 
-    * Must use at least two APIs
-    * Must use AJAX to pull data
-    * Must utilize at least one new library or technology that we haven't discussed
-    * Must have a polished frontend / UI
-    * Must meet good quality coding standards (indentation, scoping, naming)
-    * Must NOT use alerts, confirms, or prompts (look into modals!)
-    * Must have some sort of repeating element (table, columns, etc.)
-    * Must use Bootstrap or Alternative CSS Framework
-    * Must be Deployed (GitHub Pages or Firebase)
-    * Must have User Input Validation
+We needed a way to access song data tied to geographic locations. We also needed to access song lyrics, and optionally videos, for the selected songs. We also wanted to implement validation on user input. Additionally, we wanted to display a flag for the nation selected that would have adequate image quality to scale up to HD and 4K monitors.
 
-### Presentation Requirement
+## Technical Solutions:
 
-    10 minute formal presentation
-    Explain in detail:
-        Our overall application's concept
-        Our Design process
-        The motivation for its development
-        The technologies we used (and briefly how they work)
-        A demonstration of its functionality
-        Directions for future development
+- The LastFM API provides a way to get the current playlist of top songs based on country. Links to the video for the playlist songs are also provided by the LastFM API.
+- The Lyrics.ovh API provides the user requested lyrics.
+- user input validation was implemented using an if/else conditional to check for correct user input.
+- SVG graphics were used for the country flags. SVGs are vector format, so the file size is small, and the images are infinitely scalable with no loss of image quality.
 
-### Grading Metrics
+## How the app is organized:
 
-    * Concept
-    * Design
-    * Functionality
-    * Collaboration
-    * Presentation
+GeoTunes' structure is defined by an HTML document. The app logic, the AJAX calls, and the jQuery code to populate the DOM are contained in a JavaScript file, and three CSS files are used: normalize.css, the Foundation CSS framework, and our custom css file.
 
-### API Suggestions
+## How to run GeoTunes:
 
-    Stick to APIs that do all of the following:
-        * Allows CORS
-        * Simple or no authentication
-        * JSON response returned
-        * Well documented
+GeoTunes can either be run from the hosted site (link is above) or you can download the files to a local directory and open the HTML document in a web browser.
+
+## Demo:
+
+![Demo](./assets/images/demo.gif)
+
+## Built with:
+
+- CSS3
+- Foundation CSS
+- HTML5
+- JavaScript
+- jQuery
+- LastFM API
+- Lyrics.ovh API
+- Normalize CSS
+
+## Authors:
+
+- Joel Akers (Front End)
+- Dirk Kiesewetter (Front End)
+- Evan Kozierachi (Back End)
+- Pauline Senh (Team Lead & Back End)
