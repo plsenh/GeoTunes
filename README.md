@@ -1,8 +1,6 @@
 # GeoTunes
 
----
-
-## [Go To Deployed Site](https://plsenh.github.io/GeoTunes/)
+## [Go To Deployed App](https://plsenh.github.io/GeoTunes/)
 
 ![screenshot](/assets/images/GeoTunes.PNG)
 
@@ -48,7 +46,7 @@ GeoTunes can either be run from the hosted site (link is above) or you can downl
 
 ## Authors:
 
-- Joel Akers (Front End)
-- Dirk Kiesewetter (Front End)
-- Evan Kozierachi (Back End)
-- Pauline Senh (Team Lead & Back End)
+- **Joel Akers** - [griegomas](https://github.com/griegomas) (Front End)
+- **Dirk Kiesewetter** - [dirk-kiesewetter](https://github.com/dirk-kiesewetter) (Front End)
+- **Evan Kozierachi** - [ebk13579](https://github.com/ebk13579) (Back End)
+- **Pauline Senh** - [plsenh](https://github.com/plsenh) (Team Lead & Back End)
